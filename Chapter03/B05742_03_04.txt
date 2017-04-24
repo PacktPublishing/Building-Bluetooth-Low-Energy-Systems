@@ -1,0 +1,8 @@
+BluetoothAdapter.LeScanCallback leScanCallback = new BluetoothAdapter.LeScanCallback() {
+    @Override
+    public void onLeScan(BluetoothDevice device, int rssi, byte[] scanRecord) {
+         // Do something with the scanned data…
+    }
+};
+
+startLeScan(leScanCallback);

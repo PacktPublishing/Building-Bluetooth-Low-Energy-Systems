@@ -1,0 +1,14 @@
+// ---------------------------------------- MANUAL PERMISSIONS ----------------------------------
+
+String[] permissionString = new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
+yourActivity.requestPermissions(permissionString , yourPermissionRequestCode);
+
+// ---------------------------------------- CATCHING PERMISSIONS --------------------------------
+
+@Override
+public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults){
+    if(requestCode == yourPermissionRequestCode)
+    {
+        ... //Do something based on the user click.
+    }
+}

@@ -1,0 +1,11 @@
+BluetoothProfile.ServiceListener leServiceListener = new BluetoothProfile.ServiceListener() {
+            @Override
+            public void onServiceConnected(int profile, BluetoothProfile proxy) {
+                //Do something upon receiving a service connection
+            }
+
+            @Override
+            public void onServiceDisconnected(int profile) {
+                //Do something upon receiving a service disconnection
+            }
+};

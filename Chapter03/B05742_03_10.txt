@@ -1,0 +1,7 @@
+List<BluetoothGattCharacteristic> gattCharacteristics =
+                service.getCharacteristics();
+        // Loops through available Characteristics.
+        for (BluetoothGattCharacteristic gattCharacteristic :
+                gattCharacteristics) {
+            // Do something with gattCharacteristic
+        }
