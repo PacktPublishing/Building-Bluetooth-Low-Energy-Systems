@@ -64,6 +64,10 @@ public class MainActivity extends ListActivity {
                 (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
         mLeDeviceListAdapter = new BluetoothLeListAdapter(this);
+        
+        // Add this line to make scanning work!!!
+        mBluetoothLeScanner = mBluetoothAdapter.getBluetoothLeScanner();
+
 
         //Check if Bluetooth Low Energy is supported by the device
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
