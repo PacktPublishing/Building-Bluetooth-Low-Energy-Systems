@@ -1,0 +1,40 @@
+<div>
+    <h1>{{title}}</h1>
+    <div class='breadcrumbs'>
+      All Nodes
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>RSSI</th>
+          <th>Manufacturer</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each nodes}}
+          {{#each this}}
+            <tr>
+              <td>
+                <ul>
+                  {{#each this.bdaddrs}}
+                    <li>
+                      <a href='/nodes/{{this.bdaddr}}'>
+                        {{this.bdaddr}}
+                      </a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </td>
+              <td>
+                {{this.rssi}}
+              </td>
+              <td>
+                {{this.advertisement.localName}}
+              </td>
+            </tr>
+          {{/each}}
+        {{/each}}
+      </tbody>
+    </table>
+</div>

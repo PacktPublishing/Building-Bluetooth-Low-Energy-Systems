@@ -1,0 +1,45 @@
+<div>
+    <h1>
+      {{title}}
+    </h1>
+    <div class='breadcrumbs'>
+        <a href='/nodes'>
+          All Nodes
+        </a>
+        ->
+        <a href='/nodes/{{device}}'>
+          Node: {{device}}
+        </a>
+        ->
+        Service: {{service}}
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>UUID</th>
+          <th>Properties</th>
+          <th>Values</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each characteristics}}
+          <tr>
+            <td>{{this.uuid}}</td>
+            <td>
+              <ul>
+                {{#each this.properties}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </td>
+            <td>
+              <a href='/nodes/{{../device}}/services/{{../service}}/characteristics/{{this.uuid}}'>
+                Get/Set Value
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </ul>
+</div>

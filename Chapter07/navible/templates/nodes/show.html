@@ -1,0 +1,41 @@
+<div>
+    <h1>
+      {{title}}
+    </h1>
+    <div class='breadcrumbs'>
+        <a href='/nodes'>
+          All Nodes
+        </a>
+        ->
+        Node: {{device}}
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Node Address</th>
+          <th>UUID</th>
+          <th>Primary?</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each services}}
+          {{#each this}}
+            <tr>
+              <td>{{../../device}}</td>
+              <td>{{this.uuid}}</td>
+              <td>{{this.primary}}</td>
+              <td>
+                <a href='/nodes/{{node}}'>
+                  {{this.bdaddr}}
+                </a>
+                <a href='/nodes/{{../../device}}/services/{{this.uuid}}'>
+                  Characteristics
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+        {{/each}}
+      </tbody>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+{
+  "name": "Smart_Gateway",
+  "version": "1.0.1",
+  "description": "Bluetooth gateway to the IP network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bluetooth SIG",
+  "license": "EULA",
+  "dependencies": {
+    "async": "~1.5.0",
+    "crc": "~3.3.0",
+    "hapi": "~8.8.1",
+    "noble": "~1.2.0",
+    "bluetooth-hci-socket": "~0.4.2"
+  }
+}

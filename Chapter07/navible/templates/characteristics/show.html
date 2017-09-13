@@ -1,0 +1,111 @@
+<div>
+  <h1>
+    {{title}}
+  </h1>
+  <div class='breadcrumbs'>
+      <a href='/nodes'>
+        All Nodes
+      </a>
+      ->
+      <a href='/nodes/{{device}}'>
+        Node: {{device}} ({{manufacturer}})
+      </a>
+      ->
+      <a href='/nodes/{{device}}/services/{{service}}'>
+        Service: {{service}}
+      </a>
+      ->
+      Characteristic: {{characteristic}}
+  </div>
+  {{#if bean}}
+    <table>
+      <thead>
+        <tr>
+          <th>Hex Value</th>
+          <th>Human Readable Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id='buffer_value'>{{value.value.data}}</td>
+          <td id='human_readable_value'></td>
+        </tr>
+        <tr>
+          <td>
+            <form accept-charset="UTF-8" method="post" novalidate="novalidate">
+              <input type='hidden' name="new_value" value='a0020020024f0c'>
+              <input type="submit" value="Request LED data" class='btn'>
+            </form>
+            <br/>
+            <form accept-charset="UTF-8" method="post" novalidate="novalidate">
+              <input type='hidden' name="new_value" value='c0020020107d7f'>
+              <input type="submit" value="Request Accelerometer data" class='btn'>
+            </form>
+            <br/>
+            <form accept-charset="UTF-8" method="post" novalidate="novalidate">
+              <input type='hidden' name="new_value" value='80020020116d5e'>
+              <input type="submit" value="Request Temperature" class='btn'>
+            </form>
+          </td>
+          <td>
+            <p>
+              You can control the LED on the bean by providing RGB (red, green, blue)
+              values and clicking "Change LED Color". You can learn more about RGB
+              <a href='http://whatis.techtarget.com/definition/RGB-red-green-and-blue'>
+                here.
+              </a>Each value should be an integer between 0 and 255.
+
+            </p>
+            <form accept-charset="UTF-8" method="post" id="rgb" novalidate="novalidate">
+              <label>Red</label>
+              <input type="text" name="red" value="0">
+              <br/>
+              <label>Green</label>
+              <input type="text" name="green" value="0">
+              <br/>
+              <label>Blue</label>
+              <input type="text" name="blue" value="0">
+              <input type='hidden' name="new_value" value='8005002001000000f669'>
+              <br/>
+              <br/>
+              <input type="submit" value="Change LED Color" class='btn'>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong> Important Note about the Bean </strong>
+      </br>
+      <ul>
+        <li>
+          After you write the LED, request the LED values to confirm that the color changed.
+          The buffer will contain the RGB values in positions 6, 7, 8.
+        </li>
+      </ul>
+    </p>
+  {{else}}
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Data</th>
+          <th>Write a Hex Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{value.value.type}}</td>
+          <td>{{value.value.data}}</td>
+          <td>
+            <form accept-charset="UTF-8" method="post" novalidate="novalidate">
+              <input type='text' name="new_value">
+              <br/>
+              <input type="submit" value="Write" class: 'btn'>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  {{/if}}
+</div>

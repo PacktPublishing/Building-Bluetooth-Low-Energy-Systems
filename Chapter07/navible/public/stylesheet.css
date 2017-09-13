@@ -1,0 +1,78 @@
+html {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 80%;
+  margin-left: 10%;
+}
+
+strong, p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  background: #3498db;
+  padding: 4px 20px 4px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.breadcrumbs {
+  text-align: center;
+  font-size: 14px;
+  color: darkGray;
+  margin: 10px 0;
+  a:link, a:visited, a:hover, a:active {
+    color: darkGray;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 10%;
+}
+
+table td, table th {
+  font-size: 1em;
+  border: 1px solid #3cb0fd;
+  padding: 3px 7px 2px 7px;
+}
+
+table th {
+  font-size: 1.1em;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #3498db;
+  color: white;
+}
+
+table tr.alt td {
+  color: #000000;
+  background-color: #EAF2D3;
+}
